@@ -1,0 +1,14 @@
+file,line,family,matched,layer,usage,severity,replacement,snippet
+a1_rsa_keygen.py,6,RSA,rsa.generate_private_key,ast,unknown,HIGH,ML-KEM-768 (FIPS 203) if used for encryption or key exchange; ML-DSA-65 (FIPS 204) if used for signing,"key = rsa.generate_private_key(public_exponent=65537, key_size=2048)  # EXPECT: RSA"
+a2_ecc_signing.py,7,ECC,ec.generate_private_key,ast,unknown,HIGH,ML-KEM-768 (FIPS 203) if used for encryption or key exchange; ML-DSA-65 (FIPS 204) if used for signing,return ec.generate_private_key(ec.SECP256R1())  # EXPECT: ECC
+a2_ecc_signing.py,11,ECC,Ed25519PrivateKey.generate,ast,signature,HIGH,ML-DSA-65 (FIPS 204),key = Ed25519PrivateKey.generate()  # EXPECT: ECC
+a2_ecc_signing.py,16,ECC,ec.ECDSA,ast,signature,MEDIUM,ML-DSA-65 (FIPS 204),"return key.sign(payload, ec.ECDSA(hashes.SHA256()))  # EXPECT: ECC"
+a3_dh_exchange.py,5,DH,dh.generate_parameters,ast,key_establishment,HIGH,ML-KEM-768 (FIPS 203),"params = dh.generate_parameters(generator=2, key_size=2048)  # EXPECT: DH"
+a3_dh_exchange.py,10,ECC,x25519.X25519PrivateKey.generate,ast,key_establishment,HIGH,ML-KEM-768 (FIPS 203),alice = x25519.X25519PrivateKey.generate()  # EXPECT: ECC
+a4_dsa_and_pycryptodome.py,6,DSA,DSA.generate,ast,signature,HIGH,ML-DSA-65 (FIPS 204),return DSA.generate(2048)  # EXPECT: DSA
+a4_dsa_and_pycryptodome.py,10,RSA,RSA.import_key,ast,unknown,MEDIUM,ML-KEM-768 (FIPS 203) if used for encryption or key exchange; ML-DSA-65 (FIPS 204) if used for signing,return RSA.import_key(pem_text)  # EXPECT: RSA
+a5_jwt_algorithms.py,11,RSA,RS256,pattern,signature,MEDIUM,ML-DSA-65 (FIPS 204),"return jwt.encode(payload, private_pem, algorithm=""RS256"")  # EXPECT: RSA"
+a5_jwt_algorithms.py,15,ECC,ES256,pattern,signature,MEDIUM,ML-DSA-65 (FIPS 204),"return jwt.encode(payload, private_pem, algorithm=""ES256"")  # EXPECT: ECC"
+a6_mixed_identity.py,9,ECC,ECC.generate,ast,unknown,HIGH,ML-KEM-768 (FIPS 203) if used for encryption or key exchange; ML-DSA-65 (FIPS 204) if used for signing,"ecc_key = ECC.generate(curve=""P-256"")  # EXPECT: ECC"
+a6_mixed_identity.py,10,ECC,PrivateKey.generate,ast,unknown,HIGH,ML-KEM-768 (FIPS 203) if used for encryption or key exchange; ML-DSA-65 (FIPS 204) if used for signing,box_key = PrivateKey.generate()  # EXPECT: ECC
+a6_mixed_identity.py,11,ECC,ecdsa.SigningKey.generate,ast,signature,HIGH,ML-DSA-65 (FIPS 204),sign_key = ecdsa.SigningKey.generate()  # EXPECT: ECC

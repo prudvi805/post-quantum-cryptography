@@ -1,0 +1,7 @@
+processor,physical_qubits,logical_qubits,depth_routed,depth_all_to_all,cx_routed,cx_all_to_all,cx_overhead,swap_est,p_success_ideal,p_success_noisy,hellinger_ideal,hellinger_noisy
+A,5,3,6,6,2,2,0,0,1.0,0.9644,1.0,0.9643
+A,5,4,7,7,3,3,0,0,1.0,0.949,1.0,0.949
+A,5,5,9,8,7,4,3,1,1.0,0.9321,0.9997,0.932
+B,9,3,6,6,2,2,0,0,1.0,0.9644,1.0,0.9643
+B,9,4,7,7,3,3,0,0,1.0,0.949,1.0,0.949
+B,9,5,8,8,4,4,0,0,1.0,0.9404,0.9997,0.9403

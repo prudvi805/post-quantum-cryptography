@@ -1,0 +1,10 @@
+{
+  "name": "Processor A",
+  "role": "5-qubit participant-designed processor (nodes 0-4)",
+  "num_qubits": 5,
+  "coupling_map": [[0, 1], [1, 2], [2, 3], [1, 3], [3, 4]],
+  "design_justification": "Fork-with-triangle topology: node 1 is a degree-3 hub, and nodes 1-2-3 form a closed triangle. Compared with the linear-chain and branching-tree references (4 edges each), it spends one extra edge, (1,3), so that three mutually interacting qubits can be placed without a SWAP. A GHZ fan-out from a hub therefore needs fewer SWAPs on this graph than on the linear chain.",
+  "basis_gates": ["rz", "sx", "x", "cx"],
+  "noise": {"gates_1q": ["rz", "sx", "x"], "p_1q": 0.001, "p_2q": 0.005, "p_readout": 0.01},
+  "transpile": {"optimization_level": 1, "seed": 42, "shots": 4096, "basis_gates": ["rz", "sx", "x", "cx"]}
+}
