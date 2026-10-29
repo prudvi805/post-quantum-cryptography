@@ -1,0 +1,10 @@
+{
+  "name": "Processor B",
+  "role": "9-qubit contemporary reference processor (nodes 0-8)",
+  "num_qubits": 9,
+  "coupling_map": [[0, 1], [1, 2], [1, 6], [2, 3], [2, 6], [2, 5], [3, 4], [4, 5], [5, 6], [6, 7], [6, 8], [8, 0]],
+  "design_justification": "Heavy-hex-inspired reference graph from the problem specification, used unchanged as the contemporary control. Maximum degree is 3, with 12 edges and one 6-cycle plus 4-cycles; it is the reference against which Processor A's design is compared.",
+  "basis_gates": ["rz", "sx", "x", "cx"],
+  "noise": {"gates_1q": ["rz", "sx", "x"], "p_1q": 0.001, "p_2q": 0.005, "p_readout": 0.01},
+  "transpile": {"optimization_level": 1, "seed": 42, "shots": 4096, "basis_gates": ["rz", "sx", "x", "cx"]}
+}

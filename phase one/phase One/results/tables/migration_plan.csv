@@ -1,0 +1,8 @@
+family,usage,replacement,findings
+DH,key_establishment,ML-KEM-768 (FIPS 203),1
+DSA,signature,ML-DSA-65 (FIPS 204),1
+ECC,key_establishment,ML-KEM-768 (FIPS 203),1
+ECC,signature,ML-DSA-65 (FIPS 204),4
+ECC,unknown,ML-KEM-768 (FIPS 203) if used for encryption or key exchange; ML-DSA-65 (FIPS 204) if used for signing,3
+RSA,signature,ML-DSA-65 (FIPS 204),1
+RSA,unknown,ML-KEM-768 (FIPS 203) if used for encryption or key exchange; ML-DSA-65 (FIPS 204) if used for signing,2
