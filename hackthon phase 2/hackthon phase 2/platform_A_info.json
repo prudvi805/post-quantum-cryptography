@@ -1,0 +1,20 @@
+{
+  "platform_label": "A",
+  "recorded_at": "2026-10-30 00:55:05",
+  "os": "Windows 11",
+  "os_version": "10.0.26200",
+  "machine": "AMD64",
+  "cpu_model": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "physical_cores": 8,
+  "logical_cores": 12,
+  "cpu_max_mhz": 2100.0,
+  "ram_total_gb": 15.71,
+  "python": "3.13.17",
+  "python_impl": "CPython",
+  "on_battery": true,
+  "versions": {
+    "cryptography": "50.0.2",
+    "pqcrypto": "1.0.0",
+    "psutil": "7.2.2"
+  }
+}
