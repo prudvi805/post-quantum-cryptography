@@ -1,3 +1,0 @@
-asset_id,predicted_label,priority_score,priority_rank,recommended_action,migration_wave,depends_on,rationale
-DEV-0001,QUANTUM_VULNERABLE,92,1,Replace RSA-2048 TLS certificate with ML-DSA-65 or hybrid certificate after internal CA migration,1,DEV-0042,QV; internet_exposed=yes; retention=10y; criticality=critical
-DEV-0002,UNKNOWN,70,4,Manual review: algorithm not recorded on vendor appliance,review,,algorithm blank; internet_exposed=unknown treated as yes
